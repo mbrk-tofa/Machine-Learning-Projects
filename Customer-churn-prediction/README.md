@@ -1,14 +1,10 @@
-### **Customer Churn Prediction — End-to-End ML System**
+# **Customer Churn Prediction — End-to-End ML System**
 
-##### 
-
-##### **Project Overview**
+## **Project Overview**
 
 This project implements a full end-to-end machine learning system for predicting customer churn.
 
 It goes beyond model training to include uncertainty estimation, cost-sensitive decision making, calibration, deployment, and containerization.
-
-
 
 **The system outputs:**
 
@@ -17,9 +13,7 @@ It goes beyond model training to include uncertainty estimation, cost-sensitive 
 
 The entire workflow is reproducible, auditable, and deployable.
 
-##### 
-
-##### **Problem Statement**
+## **Problem Statement**
 
 Customer churn is costly. The objective is to:
 
@@ -35,9 +29,16 @@ This is framed as a binary classification problem:
 
 The key challenge is not classification accuracy, but balancing false positives vs false negatives under asymmetric business costs.
 
+## **Key Design Principles**
+- Separation of concerns
+- training ≠ evaluation ≠ inference ≠ deployment
+- Probabilities first, decisions second
+- Cost-aware thresholding
+- Calibration before deployment
+- Single source of truth for inference
 
 
-##### **Dataset**
+## **Dataset**
 
 &nbsp;- Source: Telco Customer Churn dataset (Kaggle)
 
@@ -59,7 +60,7 @@ The cleaned dataset is stored in:
 
 
 
-##### **Machine Learning Workflow**
+## **Machine Learning Workflow**
 
 This project follows a disciplined ML engineering pipeline:
 
@@ -189,47 +190,70 @@ The entire system is containerized for:
 
 
 
-##### **Repository Structure**
-
+## **Repository Structure**
+```bash 
 .
-
 ├── data/
-
 │   ├── raw/
-
 │   └── processed/
-
 ├── notebooks/
-
 │   └── 01\_eda.ipynb
-
 ├── src/
-
 │   ├── data/
-
 │   ├── features/
-
 │   ├── models/
-
 │   └── utils/
-
 ├── app/
-
 │   └── api.py
-
 ├── models/
-
 │   ├── logistic\_model.pkl
-
 │   ├── logistic\_model\_calibrated.pkl
-
 │   └── decision\_policy.json
-
 ├── requirements.txt
-
 ├── Dockerfile
-
 └── README.md
+```
+## **How to run the Project**
+### **Create and activate virtual env**
+```bash
+python -m venv venv
+venv\Scripts\activate        # Windows
+source venv/bin/activate  # Linux / macOS
+```
+### **Install dependencies**
+```bash
+pip install -r requirements.txt
+```
+### **Run the API**
+```bash
+python -m uvicorn app.api:app --reload
+```
+### **Open in browser**
+```bash
+http://127.0.0.1:8000/docs
+```
+### **API Usage**
+After visiting the address above, follow steps below:
+1. Click POST /predict
+2. Click Try it out
+3. Paste JSON input
+4. Click Execute
+for step-3, I have provided a sample input data in the ./data/raw/test.json,
+you can copy and paste directly
+you can also generate new examples by using the notebook (01_eda.ipynb), i have provided a code in the last section of the notbook which you can change the index values to get new input example.
+```bash
+exmp = df.iloc[2].to_dict() # change [2] to another index and run the cell to generate new example in the test.json file
+```
+### **Running with Docker**
+```bash 
+docker build -t churn-api . #build image
+docker run -p 8000:8000 churn-api # Run the container
+http://127.0.0.1:8000/docs # access through browser
+```
 
-
-
+## **Limitations & Future work**
+ - Add monitoring and data-drift detection
+ - Periodic recalibration under distribution shift
+ - CI/CD pipeline
+ - Batch inference jobs
+ - Extend to other supervised tasks (regression, time-series)
