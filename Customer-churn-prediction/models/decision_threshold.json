@@ -1,0 +1,6 @@
+{
+    "threshold": 0.14,
+    "precision": 0.41982864137086906,
+    "recall": 0.9171122994652406,
+    "expected_cost": 629
+}
