@@ -48,7 +48,7 @@ Supervised binary classification
 - Data reflects real decision-time information (no leakage)
 - Labels are reliable
 
-## **Rist Mitigation**
+## **Risk Mitigation**
 | Risk                        | Mitigation                        |
 | --------------------------- | --------------------------------- |
 | Severe class imbalance      | Class weighting, threshold tuning |

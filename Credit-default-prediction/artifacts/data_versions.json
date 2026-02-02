@@ -1,0 +1,10 @@
+{
+  "dataset": "credit_default",
+  "version": "v1",
+  "rows": 30000,
+  "train_rows": 24000,
+  "test_rows": 6000,
+  "positive_rate": 0.2212,
+  "hash": "7ac82f397c8220dfed80165fb0cc8375965e0dff3cee5dcdcf7180497c4b8f45",
+  "random_seed": 42
+}

@@ -8,12 +8,6 @@ __pycache__/
 venv/
 myvenv/
 
-# Django stuff
-*.log
-db.sqlite3
-media/
-staticfiles/
-dev_settings.py
 
 # Environment files / secrets
 .venv
@@ -33,3 +27,6 @@ Thumbs.db
 .pytest_cache/
 htmlcov/
 coverage.xml
+
+# folders
+/data/raw
