@@ -1,0 +1,23 @@
+{
+  "decision_tree": {
+    "roc_auc": 0.7507682947026408,
+    "precision": 0.6696562032884903,
+    "recall": 0.33760361718161264,
+    "roc_auc_ci_lower": 0.7352083931870395,
+    "roc_auc_ci_upper": 0.7668009081815347
+  },
+  "logistic_regression": {
+    "roc_auc": 0.7105996689926628,
+    "precision": 0.36765994741454866,
+    "recall": 0.6322532027128862,
+    "roc_auc_ci_lower": 0.693535282359559,
+    "roc_auc_ci_upper": 0.7279153226837801
+  },
+  "random_forest": {
+    "roc_auc": 0.7728110192578024,
+    "precision": 0.6687797147385103,
+    "recall": 0.3180105501130369,
+    "roc_auc_ci_lower": 0.7582748278345094,
+    "roc_auc_ci_upper": 0.7887969222221043
+  }
+}
