@@ -1,0 +1,14 @@
+{
+  "decision_tree": {
+    "best_threshold": 0.17251256281407037,
+    "expected_cost": 0.5783333333333334
+  },
+  "logistic_regression": {
+    "best_threshold": 0.5073869346733668,
+    "expected_cost": 0.6448333333333334
+  },
+  "random_forest": {
+    "best_threshold": 0.17251256281407037,
+    "expected_cost": 0.5653333333333334
+  }
+}

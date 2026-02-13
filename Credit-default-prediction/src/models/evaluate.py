@@ -1,3 +1,14 @@
+"""This script is responsible for:
+- Loading trained model pipelines
+- Evaluating on the held-out test set
+- Computing:
+ - ROC-AUC
+ - Precision
+ - Recall
+ - Estimating bootstrap confidence intervals
+- then saving evaluation results
+"""
+
 from pathlib import Path
 import pandas as pd
 import numpy as np
