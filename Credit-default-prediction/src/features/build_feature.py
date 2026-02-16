@@ -26,7 +26,8 @@ def get_project_root() -> Path:
 #Data Loading
 def load_processed_data(root: Path) -> pd.DataFrame:
     data_path = root / 'data' / 'processed' / 'credit_default_v1.parquet'
-    return pd.read_parquet(data_path)
+    df = pd.read_parquet(data_path)
+    return df
 
 #Grouping features:
 def get_feature_group():

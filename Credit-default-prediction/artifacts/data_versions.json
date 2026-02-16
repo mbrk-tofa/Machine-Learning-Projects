@@ -5,6 +5,6 @@
   "train_rows": 24000,
   "test_rows": 6000,
   "positive_rate": 0.2212,
-  "hash": "7ac82f397c8220dfed80165fb0cc8375965e0dff3cee5dcdcf7180497c4b8f45",
+  "hash": "6b9a81b7398747569cb97f423919994d531b928711168e4e3d1eb10887f47aac",
   "random_seed": 42
 }

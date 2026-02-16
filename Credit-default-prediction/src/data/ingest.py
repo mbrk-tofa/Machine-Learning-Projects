@@ -30,6 +30,7 @@ df = pd.read_csv(RAW_PATH)
 
 #Rename target
 df = df.rename(columns={TARGET: "default"})
+df = df.drop(columns="ID")
 
 #Train-test split
 """
