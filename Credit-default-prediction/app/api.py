@@ -3,6 +3,7 @@ import json
 import joblib
 import numpy as np
 import pandas as pd
+from src.monitoring.log_predictions import log_prediction
 
 
 from fastapi import FastAPI
@@ -155,10 +156,22 @@ def predict(request: CreditRequest):
     probability = MODEL.predict_proba(input_data)[0, 1]
 
     decision = "reject" if probability >= OPTIMAL_THRESHOLD else "approve"
+    
+    
 
+    log_prediction(
+        input_data=request.dict(),
+        probability=float(probability),
+        decision=decision,
+        model_name=MODEL_NAME
+    )
+    
+    
     return PredictionResponse(
         model_name=MODEL_NAME,
         default_probability=float(probability),
         decision=decision,
         threshold_used=OPTIMAL_THRESHOLD,
     )
+
+    

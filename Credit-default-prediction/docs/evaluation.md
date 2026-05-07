@@ -154,10 +154,3 @@ This is where the project becomes production-grade.
 
 ---
 
-If you’re ready:
-
-Reply:
-
-> **step 7**
-
-Now we enter decision theory.
