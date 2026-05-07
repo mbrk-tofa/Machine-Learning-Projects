@@ -1,7 +1,7 @@
 # **Credit Default Prediction System:** A production-oriented, end-to-end binary classification system with monitoring and automated retraining capabilities.
 
 ## **Project Overview**
-in this project we implemented a production-grade full end-to-end machine learning system for predicting credit default risk using supervised binary classification. The system implements the folloction function beyond notebook-style:
+in this project we implemented a production-grade full end-to-end machine learning system for predicting credit default risk using supervised binary classification. The system implements the following function beyond notebook-style:
 - Reproducible data pipelines
 - Feature engineering pipelines
 - Multi-model experimentation
@@ -55,19 +55,14 @@ The threshold is optimized using business cost rather than arbitrary 0.5 classif
 **Source:** UCI Machine Learning Repository
 
 **Dataset Characteristics**
-|---------|----------------------------|
+
 |Property |	Value                      |
 |---------|----------------------------|
 |Rows	  | 30,000                     |
-|---------|----------------------------|
 |Features |	23                         |
-|---------|----------------------------|
 |Target	  | default.payment.next.month |
-|---------|----------------------------|
 |Domain	  | Credit Risk                |
-|---------|----------------------------|
 |Problem Type |	Binary Classification  |
-|-------------|------------------------|
 
 ## **Project Flow**
 ```bash
@@ -95,7 +90,7 @@ Model Versioning
 ```
 ## **Reposiroty Structure**
 ```bash
-project-credit-default/
+Credit-default-prediction/
 │
 ├── data/
 │   ├── raw/
@@ -147,13 +142,12 @@ Because the default threshold of 0.5 is arbitrary, we implement an optimized the
 
 **Business cost matrix**
 The cost of missing defaulter is 5x more than rejecting a good customer
-|----------------|----------------------|
+
 | Error type     | Cost                 |
 |----------------|----------------------|
 | False Positive | 1                    |
-|----------------|----------------------|
 | False Negative | 5                    |
-|----------------|----------------------|
+
 
 ## **Deployment API**
 The project exposes a production-ready FastAPI service.
@@ -226,7 +220,7 @@ The registry tracks:
 | Serialization	     | joblib          |
 | Visualization	     | matplotlib      |
 | Validation	     | Pydantic        |
-|--------------------|-----------------|
+
 
 ## **Installation Steps:**
 1. Clone master repository 
